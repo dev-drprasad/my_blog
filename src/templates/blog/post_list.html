@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>Posts</h3>
+        {% for post in object_list %}
+            <div>
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.content }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

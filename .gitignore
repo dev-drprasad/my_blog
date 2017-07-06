@@ -3,3 +3,4 @@ myblog.sublime-project
 myblog.sublime-workspace
 *.pyc
 *.sqlite3
+.idea
