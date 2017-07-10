@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends 'base.html' %}
 
-    </head>
-    <body>
-        <h3>Posts</h3>
-        {% for post in object_list %}
-            <div>
-                <h4>{{ post.title }}</h4>
-                <p>{{ post.content }}</p>
-            </div>
-        {% endfor %}
-    </body>
-</html>
+{% block content %}
+
+    <h3>Posts</h3>
+
+    {% for post in posts %}
+        <div>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.content }}</p>
+            <a href="{% url 'blog:post-detail' pk=post.pk %}">read more...</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}
