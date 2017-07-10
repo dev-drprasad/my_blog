@@ -8,7 +8,7 @@
         <div>
             <h4>{{ post.title }}</h4>
             <p>{{ post.content }}</p>
-            <a href="{% url 'blog:post-detail' pk=post.pk %}">read more...</a>
+            <a href="{% url 'blog:post-detail' post.pk %}">read more...</a>
         </div>
     {% endfor %}
 
