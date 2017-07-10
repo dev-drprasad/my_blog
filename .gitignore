@@ -4,3 +4,4 @@ myblog.sublime-workspace
 *.pyc
 *.sqlite3
 .idea
+static/
