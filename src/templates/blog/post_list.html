@@ -2,12 +2,12 @@
 
 {% block content %}
 
-    <h3>Posts</h3>
+    <h1>Posts</h1>
 
     {% for post in posts %}
         <article class="post">
             <div class="date">{{ post.created_on }}</div>
-            <h4 class="post-title"><a href="{% url 'blog:post-detail' post.pk %}">{{ post.title }}</a></h4>
+            <h1 class="post-title"><a href="{% url 'blog:post-detail' post.pk %}">{{ post.title }}</a></h1>
             <div class="post-content">
                 <p>{{ post.content }}</p>
                 <a href="{% url 'blog:post-detail' post.pk %}">continue reading &rarr;</a>
