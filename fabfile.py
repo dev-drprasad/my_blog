@@ -1,0 +1,21 @@
+from contextlib import contextmanager as _contextmanager
+
+from fabric.api import env, cd, run, prefix
+
+env.hosts = ['reddyprasad.me']
+
+
+@_contextmanager
+def virtualenv():
+    with prefix('source ~/envs/blog/bin/activate'):
+        yield
+
+
+def pull():
+    env.user = 'ubuntu'
+    with cd('projects'):
+        with cd('my_blog'):
+            run('git pull')
+
+            with virtualenv():
+                run('pip install -r requirements.txt')
