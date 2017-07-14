@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_filters %}
 
 {% block title %} {{ post.title }} {% endblock %}
 
@@ -8,7 +9,7 @@
         <div class="date">{{ post.created_on }}</div>
         <h2 class="title">{{ post.title }}</h2>
         <div class="content">
-            <p>{{ post.content }}</p>
+            {{ post.content_as_html }}
         </div>
     </article>
 

@@ -9,9 +9,9 @@
             <div class="date">{{ post.created_on }}</div>
             <h1 class="post-title"><a href="{% url 'blog:post-detail' post.pk %}">{{ post.title }}</a></h1>
             <div class="post-content">
-                <p>{{ post.content }}</p>
-                <a href="{% url 'blog:post-detail' post.pk %}">continue reading &rarr;</a>
+                {{ post.content_as_html|truncatewords_html:'100' }}
             </div>
+            <a class="read-more" href="{% url 'blog:post-detail' post.pk %}">continue reading &rarr;</a>
         </article>
     {% endfor %}
 
