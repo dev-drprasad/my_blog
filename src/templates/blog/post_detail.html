@@ -9,7 +9,7 @@
         <div class="date">{{ post.created_on|date }}</div>
         <h2 class="title">{{ post.title }}</h2>
         <div class="content">
-            {{ post.content_as_html }}
+            {{ post.content|as_html }}
         </div>
     </article>
 

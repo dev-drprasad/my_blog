@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import markdown
+import markdown2 as markdown
 
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
@@ -28,4 +28,4 @@ class Post(models.Model):
 
     def content_as_html(self):
         """ Converts markdown syntax in content field to HTML"""
-        return mark_safe(markdown.markdown(self.content))
+        return mark_safe(markdown.markdown(self.content, extras=["fenced-code-blocks"]))
