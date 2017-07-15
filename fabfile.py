@@ -19,3 +19,5 @@ def pull():
 
             with virtualenv():
                 run('pip install -r requirements.txt')
+                run('cd src && python manage.py collectstatic --settings=project.settings.production')
+                run('cd src && python manage.py migrate')

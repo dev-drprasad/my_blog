@@ -7,7 +7,7 @@ from blog.models import Post
 
 
 class PostAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'created_on', 'is_draft')
 
 
 # Register your models here.

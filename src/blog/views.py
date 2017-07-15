@@ -15,10 +15,12 @@ NO_SENT_EMAILS = 0
 class PostList(ListView):
     model = Post
     context_object_name = 'posts'
+    queryset = Post.objects.active()
 
 
 class PostDetail(DetailView):
     model = Post
+    queryset = Post.objects.active()
 
 
 def contact(request):
