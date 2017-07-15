@@ -19,8 +19,7 @@ a {
 
 .post-title a {
     color: inherit;
-    text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .post-title a:hover {
