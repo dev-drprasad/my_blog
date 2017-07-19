@@ -29,3 +29,8 @@ class Post(models.Model):
     def content_as_html(self):
         """ Converts markdown syntax in content field to HTML"""
         return mark_safe(markdown.markdown(self.content, extras=["fenced-code-blocks"]))
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        # TODO return slug after slug implemented
+        return reverse('blog:post-detail', args=[str(self.id)])
