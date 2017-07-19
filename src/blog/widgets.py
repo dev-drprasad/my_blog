@@ -19,9 +19,12 @@ class MarkdownEditor(forms.Widget):
     def render(self, name, value, attrs=None, renderer=None):
 
         template = '''
-            <textarea name="%(name)s" id="id_%(name)s" required="" class="vLargeTextField"></textarea>
+            <textarea name="%(name)s" id="id_%(name)s" required="" class="vLargeTextField">%(value)s</textarea>
             <style>
                 .CodeMirror {
+                    height: auto;
+                }
+                .CodeMirror-scroll {
                     min-height: 300px;
                 }
             </style>
@@ -30,8 +33,8 @@ class MarkdownEditor(forms.Widget):
                 var editor = CodeMirror.fromTextArea(editorElem, {
                     lineWrapping: true,
                     theme: 'mdn-like',
-                    lineNumbers: true
+                    lineNumbers: true,
                 });
             </script>
         '''
-        return mark_safe(template % {'name': name})
+        return mark_safe(template % {'name': name, 'value': value or ''})
