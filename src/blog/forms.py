@@ -10,5 +10,6 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'content', 'is_draft')
         widgets = {
+            'title': forms.TextInput(attrs={'placeholder': 'Post Title'}),
             'content': MarkdownEditor,
         }

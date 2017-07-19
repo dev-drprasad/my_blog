@@ -1,0 +1,11 @@
+.form-row label {
+    display: none;
+}
+
+input#id_title {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 8px;
+    border-radius: 0;
+}

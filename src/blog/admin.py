@@ -12,6 +12,11 @@ class PostAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'created_on', 'is_draft')
 
+    class Media:
+        css = {
+            'all': ('blog-default.css',)
+        }
+
 
 admin.site.site_header = 'My Blog'
 admin.site.register(Post, PostAdmin)
