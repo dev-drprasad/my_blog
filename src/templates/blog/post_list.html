@@ -7,11 +7,11 @@
     {% for post in posts %}
         <article class="post">
             <div class="date">{{ post.created_on|date }}</div>
-            <h2 class="post-title"><a href="{% url 'blog:post-detail' post.pk %}">{{ post.title }}</a></h2>
+            <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
             <div class="post-content">
                 {{ post.content_as_html|truncatewords_html:'60' }}
             </div>
-            <a class="read-more" href="{% url 'blog:post-detail' post.pk %}">continue reading &rarr;</a>
+            <a class="read-more" href="{{ post.get_absolute_url }}">continue reading &rarr;</a>
         </article>
     {% endfor %}
 
