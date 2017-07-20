@@ -2,7 +2,7 @@
     display: none;
 }
 
-input#id_title {
+input#id_title, input#id_slug {
     width: 100%;
     font-size: 18px;
     font-weight: 400;

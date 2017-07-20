@@ -8,8 +8,9 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'content', 'is_draft')
+        fields = ('title', 'slug', 'content', 'is_draft')
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Post Title'}),
+            'slug': forms.TextInput(attrs={'placeholder': 'Slug to show in URL'}),
             'content': MarkdownEditor,
         }

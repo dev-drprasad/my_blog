@@ -9,12 +9,12 @@ a {
     text-decoration: none;
 }
 
-.container {
-    padding: 5px 10px;
+.gray-color {
+    color: #cccbcb;
 }
 
-.date {
-    color: #cccbcb;
+.container {
+    padding: 5px 10px;
 }
 
 .post-title a {

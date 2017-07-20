@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 
@@ -14,7 +15,10 @@ class MarkdownEditor(forms.Widget):
             )
         }
 
-        js = ('codemirror/codemirror.js', 'codemirror/mode/markdown/markdown.js')
+        js = (
+            'codemirror/codemirror.js',
+            'codemirror/mode/markdown/markdown.js',
+        )
 
     def render(self, name, value, attrs=None, renderer=None):
 
@@ -37,4 +41,5 @@ class MarkdownEditor(forms.Widget):
                 });
             </script>
         '''
-        return mark_safe(template % {'name': name, 'value': value or ''})
+        context = {'name': name, 'value': escape(value) if value else ''}
+        return mark_safe(template % context)

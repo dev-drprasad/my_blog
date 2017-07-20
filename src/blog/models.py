@@ -16,6 +16,7 @@ class PostManager(models.Manager):
 @python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=200)
+    slug = models.SlugField()
     content = models.TextField()
     created_on = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True, auto_now_add=False)
@@ -32,5 +33,5 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        # TODO return slug after slug implemented
-        return reverse('blog:post-detail', args=[str(self.id)])
+
+        return reverse('blog:post-detail', args=[self.slug])

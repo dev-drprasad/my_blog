@@ -6,8 +6,9 @@
 {%  block content %}
 
     <article>
-        <div class="date">{{ post.created_on|date }}</div>
+        <div class="date gray-color">{{ post.created_on|date }}</div>
         <h2 class="title">{{ post.title }}</h2>
+        <p class="post-by gray-color">by {{ request.user.get_full_name }}</p>
         <div class="content">
             {{ post.content|as_html }}
         </div>
