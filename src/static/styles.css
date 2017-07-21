@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
     color: #333232;
-    font-family: "Roboto", "Lucida Grande", Arial, sans-serif;
-    line-height: 1em;
+    font-family: "Montserrat Light", "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
 }
 
 a {
@@ -10,7 +13,7 @@ a {
 }
 
 .light-color {
-    color: #cccbcb;
+    color: #aaa9a9;
 }
 
 .container {
