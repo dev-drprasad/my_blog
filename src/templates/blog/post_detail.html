@@ -6,9 +6,9 @@
 {%  block content %}
 
     <article>
-        <div class="date gray-color">{{ post.created_on|date }}</div>
+        <div class="date light-color">{{ post.created_on|date }}</div>
         <h1 class="title">{{ post.title }}</h1>
-        <p class="post-by gray-color">by {% firstof request.user.get_full_name request.user.username %}</p>
+        <p class="post-by light-color">by {% firstof request.user.get_full_name request.user.username %}</p>
         <div class="content">
             {{ post.content|as_html }}
         </div>
