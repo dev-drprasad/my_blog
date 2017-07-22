@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>List of Posts</h1>
-
-    {% for post in posts %}
-        <article class="post">
-            <div class="date light-color">{{ post.created_on|date }}</div>
-            <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-            <div class="post-content">
-                {{ post.content_as_html|truncatewords_html:'60' }}
+    <div class="row">
+        <h1 class="col-6">List of Posts</h1>
+    </div>
+    <div class="content">
+        {% for post in posts %}
+            <div class="row">
+                <article class="post col-6">
+                    <div class="date light-color">{{ post.created_on|date }}</div>
+                    <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                    <div class="post-content">
+                        {{ post.content_as_html|truncatewords_html:'60' }}
+                    </div>
+                    <a class="read-more" href="{{ post.get_absolute_url }}">continue reading &rarr;</a>
+                </article>
             </div>
-            <a class="read-more" href="{{ post.get_absolute_url }}">continue reading &rarr;</a>
-        </article>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
 {% endblock %}

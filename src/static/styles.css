@@ -7,6 +7,10 @@ body {
     line-height: 1.5em;
 }
 
+code {
+    font-family: "Ubuntu Mono", "consolas", monospace;
+}
+
 a {
     color: #089cce;
     text-decoration: none;
@@ -14,10 +18,6 @@ a {
 
 .light-color {
     color: #aaa9a9;
-}
-
-.container {
-    padding: 5px 10px;
 }
 
 .post-title a {
@@ -30,7 +30,6 @@ a {
 }
 
 .post {
-    padding: 15px 10px;
     border-top: solid 1px #f6f6f6;
     border-bottom: solid 1px #eeeeee;
     box-shadow: 2px 3px 5px #eeeeee;

@@ -4,16 +4,18 @@
 {% block title %} {{ post.title }} {% endblock %}
 
 {%  block content %}
-
-    <article>
-        <div class="date light-color">{{ post.created_on|date }}</div>
-        <h1 class="title">{{ post.title }}</h1>
-        <p class="post-by light-color">by {% firstof request.user.get_full_name request.user.username %}</p>
-        <div class="content">
-            {{ post.content|as_html }}
-        </div>
-    </article>
-
-    {% include 'social_share.html' %}
+    <div class="row content">
+        <article class="col-6">
+            <div class="date light-color">{{ post.created_on|date }}</div>
+            <h1 class="title">{{ post.title }}</h1>
+            <p class="post-by light-color">by {% firstof request.user.get_full_name request.user.username %}</p>
+            <div class="content">
+                {{ post.content|as_html }}
+            </div>
+        </article>
+    </div>
+    <div class="row">
+        {% include 'social_share.html' %}
+    </div>
 
 {% endblock %}
