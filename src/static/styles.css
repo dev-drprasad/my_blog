@@ -60,6 +60,10 @@ hr {
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
+.content article {
+    padding: 15px;
+}
+
 footer {
     position: relative;
     bottom: 0;
