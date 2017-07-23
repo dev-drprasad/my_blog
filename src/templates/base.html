@@ -9,6 +9,9 @@
     <link href="{% static 'grid.css' %}" rel="stylesheet">
     <link href="{% static 'styles.css' %}" rel="stylesheet">
 
+    {% block stylesheets %}
+    {% endblock %}
+
 </head>
 <body>
     <div class="container">
@@ -18,4 +21,8 @@
 
     {% include 'footer.html' %}
 </body>
+
+{%  block javascript %}
+{% endblock %}
+
 </html>

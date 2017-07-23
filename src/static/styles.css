@@ -2,6 +2,7 @@
 
 body {
     color: #333232;
+    background-color: #f9f9f9;
     font-family: "Montserrat Light", "Open Sans", sans-serif;
     font-weight: 400;
     line-height: 1.5em;
@@ -9,11 +10,17 @@ body {
 
 code {
     font-family: "Ubuntu Mono", "consolas", monospace;
+    line-height: 1.2em;
 }
 
 a {
     color: #089cce;
     text-decoration: none;
+}
+
+hr {
+    border: 0;
+    border-bottom: solid 1px #cccbcb;
 }
 
 .light-color {
@@ -33,6 +40,24 @@ a {
     border-top: solid 1px #f6f6f6;
     border-bottom: solid 1px #eeeeee;
     box-shadow: 2px 3px 5px #eeeeee;
+}
+
+.title {
+    font-size: 1.8em;
+    line-height: 1.6em;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.post-by {
+    text-align: center;
+}
+
+.content {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 footer {
