@@ -16,6 +16,11 @@
                 <h1 class="title">{{ post.title }}</h1>
                 <p class="post-by light-color">by {% firstof request.user.get_full_name request.user.username %}</p>
                 <hr />
+                {% if post.cover_image %}
+                    <div class="cover-image">
+                        <img src="{{ post.cover_image.url }}">
+                    </div>
+                {% endif %}
                 <div class="post-content">
                     {{ post.content|as_html }}
                 </div>

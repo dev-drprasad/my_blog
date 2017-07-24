@@ -2,3 +2,4 @@ markdown2
 Django==1.11.3
 python-decouple==3.0
 pytz==2017.2
+Pillow==4.2.1

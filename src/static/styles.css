@@ -62,6 +62,10 @@ hr {
     text-align: center;
 }
 
+.cover-image img {
+    width: 100%;
+}
+
 .content {
     width: 75%;
     margin: 0 auto;

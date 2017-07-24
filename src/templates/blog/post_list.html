@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="row">
+    <header>
         <h1 class="col-6" style="text-align: center">REDDY PRASAD's Blog</h1>
-    </div>
+    </header>
     <div class="content">
         {% for post in posts %}
             <div class="row">
@@ -18,5 +18,4 @@
             </div>
         {% endfor %}
     </div>
-
 {% endblock %}
