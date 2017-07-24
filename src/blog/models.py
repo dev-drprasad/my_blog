@@ -21,7 +21,7 @@ class PostManager(models.Manager):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField()
-    cover_image = models.ImageField(upload_to=upload_path_handler, null=True)
+    cover_image = models.ImageField(upload_to=upload_path_handler, blank=True, null=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True, auto_now_add=False)
