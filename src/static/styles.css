@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     color: #333232;
     background-color: #f9f9f9;
@@ -21,6 +26,10 @@ a {
 hr {
     border: 0;
     border-bottom: solid 1px #cccbcb;
+}
+
+.container {
+    margin-bottom: 50px; /* equal to footer height or greater*/
 }
 
 .light-color {
@@ -65,10 +74,15 @@ hr {
 }
 
 footer {
-    position: relative;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     bottom: 0;
+    right: 0; /* fix for horizontal scroll*/
+    left: 0; /* fix for horizontal scroll*/
     width: 100%;
     height: 30px;
-    line-height: 30px;
+    vertical-align: middle;
     text-align: center;
 }
