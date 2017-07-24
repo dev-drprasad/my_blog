@@ -2,15 +2,21 @@
 from __future__ import unicode_literals
 
 import markdown2 as markdown
-
+from django.conf import settings
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.safestring import mark_safe
 
+
 def upload_path_handler(instance, filename):
     import os.path
     fn, ext = os.path.splitext(filename)
-    return 'post_{post_id}/cover.{ext}'.format(post_id=instance.id, ext=ext)
+    file_path = 'post_{post_id}/cover{ext}'.format(post_id=instance.id, ext=ext)
+    abs_path = os.path.join(settings.MEDIA_ROOT, file_path)
+    if os.path.exists(abs_path):
+        os.remove(abs_path)
+    return file_path
+
 
 class PostManager(models.Manager):
     def active(self):
@@ -43,7 +49,7 @@ class Post(models.Model):
         from django.urls import reverse
 
         return reverse('blog:post-detail', args=[self.slug])
-    
+
     def save(self, *args, **kwargs):
         if self.pk is None:
             saved_image = self.cover_image
