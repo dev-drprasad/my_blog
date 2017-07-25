@@ -14,7 +14,7 @@
             <article class="col-6">
                 <div class="date light-color">{{ post.created_on|date }}</div>
                 <h1 class="title">{{ post.title }}</h1>
-                <p class="post-by light-color">by {% firstof request.user.get_full_name request.user.username %}</p>
+                <p class="post-by light-color">by {% firstof post.author.get_full_name post.author.username %}</p>
                 <hr />
                 {% if post.cover_image %}
                     <div class="cover-image">
