@@ -20,7 +20,7 @@ def avatar_path_handler(instance, filename):
     import os.path
     fn, ext = os.path.splitext(filename)
     file_path = '{app_label}/{id}/avatar{ext}'.format(
-        app_label=instance._meta.app_label, id=instance.id, ext=ext
+        app_label=instance._meta.verbose_name, id=instance.id, ext=ext
     )
     abs_path = os.path.join(settings.MEDIA_ROOT, file_path)
     if os.path.exists(abs_path):
@@ -110,7 +110,7 @@ def upload_path_handler(instance, filename):
     import os.path
     fn, ext = os.path.splitext(filename)
     file_path = '{app_label}/{id}/cover{ext}'.format(
-        app_label=instance._meta.app_label, id=instance.id, ext=ext
+        app_label=instance._meta.verbose_name, id=instance.id, ext=ext
     )
     abs_path = os.path.join(settings.MEDIA_ROOT, file_path)
     if os.path.exists(abs_path):

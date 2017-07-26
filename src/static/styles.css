@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
 html {
     position: relative;
@@ -8,9 +8,9 @@ html {
 body {
     color: #333232;
     background-color: #f9f9f9;
-    font-family: "Montserrat Light", "Open Sans", sans-serif;
-    font-weight: 400;
-    line-height: 1.5em;
+    font-family: "Montserrat", "Open Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.6em;
 }
 
 code {
