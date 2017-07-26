@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+BLOG_TITLE = 'REDDY PRASAD\'s Blog'
+
 FROM_EMAIL = config('FROM_EMAIL')
 TO_EMAIL = config('TO_EMAIL')
 

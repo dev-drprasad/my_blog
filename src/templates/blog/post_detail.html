@@ -8,7 +8,7 @@
     {% endif %}
 {% endblock %}
 
-{% block title %} {{ post.title }} {% endblock %}
+{% block title %} {{ post.title }} | by {{ post.author.get_full_name }} {% endblock %}
 
 {% block stylesheets %}
     {{ block.super }}

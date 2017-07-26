@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %}Hi | {{ blog_title }}{% endblock %}
+
 {% block content %}
     <header>
-        <h1 style="text-align: center">REDDY PRASAD's Blog</h1>
+        <h1 style="text-align: center">{{ blog_title }}</h1>
     </header>
     <div class="content">
         {% for post in posts %}
@@ -11,7 +13,11 @@
                     <div class="date light-color">{{ post.created_on|date }}</div>
                     <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                     <div class="post-content">
-                        {% firstof post.description|linebreaks post.content_as_html|truncatewords_html:'60'  %}
+                        {% if post.description %}
+                            {{ post.description|linebreaks }}
+                        {% else %}
+                            {{ post.content_as_html|truncatewords_html:'60' }}
+                        {% endif %}
                     </div>
                     <a class="read-more" href="{{ post.get_absolute_url }}">continue reading &rarr;</a>
                 </article>

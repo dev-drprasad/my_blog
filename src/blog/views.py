@@ -16,7 +16,12 @@ class PostList(ListView):
     model = Post
     context_object_name = 'posts'
     queryset = Post.objects.active()
+    extra_context = {'blog_title': settings.BLOG_TITLE}
 
+    def get_context_data(self, **kwargs):
+        context = super(PostList, self).get_context_data(**kwargs)
+        context.update(self.extra_context)
+        return context
 
 class PostDetail(DetailView):
     model = Post
