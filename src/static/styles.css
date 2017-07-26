@@ -90,3 +90,7 @@ footer {
     vertical-align: middle;
     text-align: center;
 }
+
+footer p {
+    margin: 0;
+}

@@ -10,10 +10,11 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'slug', 'cover_image', 'content', 'is_draft')
+        fields = ('title', 'slug', 'cover_image', 'content', 'description', 'is_draft')
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Post Title'}),
             'slug': forms.TextInput(attrs={'placeholder': 'Slug to show in URL'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Short description of article'}),
             'content': MarkdownEditor,
         }
 

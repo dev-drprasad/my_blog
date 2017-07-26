@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load custom_filters static %}
 
+{% block meta %}
+    <meta name="author" content="{% firstof post.author.get_full_name post.author.username %}">
+    {% if post.description %}
+        <meta name="description" content="{{ post.description|truncatechars:'255' }}">
+    {% endif %}
+{% endblock %}
+
 {% block title %} {{ post.title }} {% endblock %}
 
 {% block stylesheets %}

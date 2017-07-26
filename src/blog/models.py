@@ -130,6 +130,7 @@ class Post(models.Model):
     slug = models.SlugField()
     cover_image = models.ImageField(upload_to=upload_path_handler, blank=True, null=True)
     content = models.TextField()
+    description = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True, auto_now_add=False)
     is_draft = models.BooleanField(default=True)
