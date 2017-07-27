@@ -118,6 +118,14 @@ def upload_path_handler(instance, filename):
     return file_path
 
 
+@python_2_unicode_compatible
+class Tag(models.Model):
+    title = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+
+
 class PostManager(models.Manager):
     def active(self):
         return super(PostManager, self).filter(is_draft=False)
@@ -128,6 +136,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='articles')
     title = models.CharField(max_length=200)
     slug = models.SlugField()
+    tags = models.ManyToManyField(Tag)
     cover_image = models.ImageField(upload_to=upload_path_handler, blank=True, null=True)
     content = models.TextField()
     description = models.TextField(null=True, blank=True)

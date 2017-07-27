@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.contrib.auth.forms import UserCreationForm
 
 from blog.forms import PostForm, AuthorForm
-from blog.models import Post, Author
+from blog.models import Post, Author, Tag
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -34,6 +34,12 @@ class AuthorAdmin(admin.ModelAdmin):
         )}),
     )
 
+
+class TagAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.site_header = 'My Blog'
 admin.site.register(Post, PostAdmin)
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(Tag, TagAdmin)
