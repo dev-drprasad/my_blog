@@ -128,7 +128,8 @@ class Tag(models.Model):
 
 class PostManager(models.Manager):
     def active(self):
-        return super(PostManager, self).filter(is_draft=False)
+        return super(PostManager, self).filter(publish=True)
+        return super(PostManager, self).filter(publish=True)
 
 
 @python_2_unicode_compatible
@@ -142,7 +143,7 @@ class Post(models.Model):
     description = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True, auto_now_add=False)
-    is_draft = models.BooleanField(default=True)
+    publish = models.BooleanField(default=True)
 
     objects = PostManager()
 

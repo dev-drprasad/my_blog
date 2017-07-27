@@ -11,7 +11,7 @@ from blog.models import Post, Author, Tag
 class PostAdmin(admin.ModelAdmin):
     form = PostForm
 
-    list_display = ('title', 'created_on', 'is_draft')
+    list_display = ('title', 'created_on', 'publish')
 
     class Media:
         css = {
