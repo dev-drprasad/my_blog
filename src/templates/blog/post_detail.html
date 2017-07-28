@@ -15,8 +15,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ post.title }}" />
-    <meta name="twitter:image" content="{% canonical_url request post.cover_image_url|default_if_none:"/media/defaults/cover.jpg" %}" />
-    <meta name="twitter:description" content="{{ post.description|truncatechars:'100' }}">
+    <meta name="twitter:description" content="{{ post.description|truncatechars:'100' }}" />
 {% endblock %}
 
 {% block title %} {{ post.title }} | by {{ post.author.get_full_name }} {% endblock %}
