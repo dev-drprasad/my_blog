@@ -7,15 +7,14 @@
         <meta name="description" content="{{ post.description|truncatechars:'255' }}">
     {% endif %}
 
+    <meta name="twitter:card" content="summary" />
+
     <meta property="og:title" content="{{ post.title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{% canonical_url request post.get_absolute_url %}" />
     <meta property="og:image" content="{% canonical_url request post.cover_image_url|default_if_none:"/media/defaults/cover.jpg" %}" />
-    <meta property="og:description" content="{{ post.description|truncatechars:'100' }}">
+    <meta property="og:description" content="{{ post.description|truncatechars:'255' }}">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{ post.title }}" />
-    <meta name="twitter:description" content="{{ post.description|truncatechars:'100' }}" />
 {% endblock %}
 
 {% block title %} {{ post.title }} | by {{ post.author.get_full_name }} {% endblock %}
