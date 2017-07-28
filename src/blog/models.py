@@ -162,6 +162,10 @@ class Post(models.Model):
 
         return reverse('blog:post-detail', args=[self.slug])
 
+    def cover_image_url(self):
+        if self.cover_image and hasattr(self.cover_image, 'url'):
+            return self.cover_image.url
+
     def save(self, *args, **kwargs):
         if self.pk is None:
             saved_image = self.cover_image
