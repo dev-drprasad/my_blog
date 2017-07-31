@@ -5,12 +5,24 @@ html {
     min-height: 100%;
 }
 
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+        line-height: normal;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    body {
+        line-height: 1.6em;
+    }
+}
+
 body {
     color: #333232;
     background-color: #f9f9f9;
     font-family: "Montserrat", "Open Sans", sans-serif;
     font-weight: 300;
-    line-height: 1.6em;
 }
 
 code {
@@ -58,6 +70,12 @@ hr {
     margin: 5px 0;
 }
 
+@media screen and (max-width: 480px) {
+    .title {
+        line-height: normal;
+    }
+}
+
 .post-meta {
     text-align: center;
 }
@@ -66,11 +84,15 @@ hr {
     width: 100%;
 }
 
+
 .content {
-    width: 75%;
-    margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+        width: 75%;
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        width: 100%;
+    }
 }
 
 .content article {
