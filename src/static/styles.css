@@ -85,13 +85,13 @@ hr {
 }
 
 .content {
-    width: 75%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .content {
         width: 100%;
     }
