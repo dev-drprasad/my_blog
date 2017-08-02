@@ -84,12 +84,14 @@ hr {
     width: 100%;
 }
 
-
 .content {
-        width: 75%;
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .content {
         width: 100%;
     }
