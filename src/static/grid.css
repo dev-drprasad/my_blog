@@ -3,6 +3,9 @@
     box-sizing: border-box;
 }
 
+.row {
+    margin-bottom: 12px;
+}
 .row:before,
 .row:after {
     content: "";

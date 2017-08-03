@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
 
 html {
     position: relative;
@@ -7,7 +7,6 @@ html {
 
 @media screen and (max-width: 480px) {
     body {
-        font-size: 12px;
         line-height: normal;
     }
 }
@@ -27,6 +26,7 @@ body {
 
 code {
     font-family: "Ubuntu Mono", "consolas", monospace;
+    font-size: 1em;
     line-height: 1.2em;
 }
 
@@ -48,9 +48,19 @@ hr {
     color: #aaa9a9;
 }
 
+.post-title {
+    margin: 10px 0;
+}
+
 .post-title a {
     color: inherit;
-    font-weight: 500;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+    .post-title a {
+        font-size: 0.85em;
+    }
 }
 
 .post-title a:hover {
@@ -68,6 +78,10 @@ hr {
     line-height: 1.6em;
     text-align: center;
     margin: 5px 0;
+}
+
+.date {
+    font-size: 0.85em;
 }
 
 @media screen and (max-width: 480px) {
@@ -99,6 +113,12 @@ hr {
 
 .content article {
     padding: 15px;
+}
+
+@media screen and (max-width: 768px){
+    .content article {
+        padding: 10px 8px;
+    }
 }
 
 footer {
