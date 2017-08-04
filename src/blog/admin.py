@@ -13,6 +13,10 @@ class PostAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'created_on', 'publish')
 
+    def save_model(self, request, obj, form, change):
+        obj.author = request.user
+        obj.save()
+
     class Media:
         css = {
             'all': ('blog-default.css',)
